@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./Font/roboto-regular-webfont.woff2') format('woff2'),
+         url('./Font/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
     box-sizing: border-box;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'robotoregular', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -18,7 +27,7 @@ body {
     grid-column: 2 / 3;
     position: relative;
     background-color: whitesmoke;
-    padding: 0 20px;
+    padding: 25px;
     box-shadow: 0 5px 5px gray;
 }
 
@@ -28,8 +37,14 @@ body {
     align-items: center;
 }
 
+.search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 #search-bar {
-    width: 40%;
+    width: 50%;
     font-size: 18px;
     border-radius: 25px;
     padding-left: 8px;
@@ -46,6 +61,8 @@ body {
 }
 
 .current-user-corner {
+    font-size: 24px;
+    font-weight: bold;
     justify-self: right;
     padding: 0 25px;
 }
@@ -54,6 +71,16 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    padding-top: 25px;
+}
+
+.current-user-handle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.greetings {
+    font-size: 18px;
 }
 
 .header-buttons {
@@ -87,11 +114,36 @@ body {
     color: white;
 }
 
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-header svg,
+.sidebar-link svg {
+    fill: white;
+}
+
+.sidebar-title {
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
 .sidebar-links {
     display: grid;
     grid-template-rows: 1fr 1fr;
     font-size: 24px;
-    gap: 1rem;
+    font-weight: bold;
+    gap: 2rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    gap: 10px;
 }
 
 .main-content {
@@ -114,17 +166,42 @@ body {
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     background-color: whitesmoke;
     border-radius: 8px;
     padding: 25px;
-    gap: 5px;
+    gap: 10px;
     border-left: 8px solid gold;
     box-shadow: 5px 5px 5px gray;
+    transition: .1s;
 }
 
-.card-title, .announcement-title {
+.card:hover {
+    transform: scale(1.04);
+}
+
+.card-icons {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 15px;
+}
+
+.card-icons svg {
+    fill: gray;
+}
+
+.project-cards-title, 
+.announcements-title, 
+.trending-title {
+    padding: 25px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-title, 
+.announcement-title {
     font-size: 18px;
     font-weight: bold;
 }
